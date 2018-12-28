@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from './Card';
-import CardList from './CardList';
+import App from './App';
 import 'tachyons';
-import { nbaPlayers } from './nbaPlayers';
-// import {robots} from './robots';
 
 import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
 ReactDOM.render(
-<CardList nbaPlayers = {nbaPlayers}/>
+   <App />
    , document.getElementById('root'));
 
 

@@ -4,15 +4,15 @@ import Card from './Card';
 
 const CardList = ({nbaPlayers}) => {
 
-   const cardArray = nbaPlayers.map((val, ind) => {
-      return (
-         <Card
-            key = {ind}
-            rank={val.rank}
-            name={val.name}
-            team={val.team}
-         />);
-   });
+   // const cardArray = nbaPlayers.map((val, ind) => {
+   //    return (
+   //       <Card
+   //          key = {ind}
+   //          rank={val.rank}
+   //          name={val.name}
+   //          team={val.team}
+   //       />);
+   // });
 
    return (<div>
 
