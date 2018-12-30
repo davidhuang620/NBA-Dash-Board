@@ -16,11 +16,13 @@ class App extends Component {
       }
    }
 
-   // componentDidMount(){
-   //    fetch('https://jsonplaceholder.typicode.com/users')
-   //    .then(response => response.json())
-   //    .then(users => {this.setState({nbaPlayers: users})})
-   // }
+
+   componentDidMount(){
+      fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => {this.setState({nbaPlayers: users})})
+   }
+
 
    OnSearchChange = (event) => {
       this.setState({searchField: event.target.value});
@@ -51,7 +53,7 @@ class App extends Component {
             </Scroll>
          </div>
       )
-   
+
 
    };
 
