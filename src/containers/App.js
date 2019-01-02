@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CardList from '../components/CardList';
-import {nbaPlayers} from '../components/nbaPlayers';
+// import {nbaPlayers} from '../components/nbaPlayers';
 import SearchBox from '../components/SearchBox';
 import './App.css';
 import Scroll from '../components/Scroll';
@@ -11,7 +11,7 @@ class App extends Component {
    constructor(){
       super();
       this.state = {
-         nbaPlayers: nbaPlayers,
+         nbaPlayers: [],
          searchField: ''
       }
    }
@@ -21,7 +21,7 @@ class App extends Component {
    //    fetch('https://jsonplaceholder.typicode.com/users')
    //    .then(response => response.json())
    //    .then(users => console.log(users))
-   //    // .then(users => {this.setState({nbaPlayers: users})})
+   //    .then(users => {this.setState({nbaPlayers: users})})
    // }
 
 
@@ -66,11 +66,9 @@ class App extends Component {
 
    componentDidMount(){
       fetch('https://data.nba.net/10s/prod/v1/2016/players.json')
-      // .then(resp => console.log(resp))
       .then(response => response.json())
-      .then(users => console.log(users))
+      .then(users => {this.setState({nbaPlayers: users.league.standard})})
       .catch(() => console.log('OOPS! Error'))
-      // .then(users => {this.setState({nbaPlayers: users})})
    }
 
 
@@ -90,12 +88,12 @@ class App extends Component {
       const searchResult = nbaPlayers.filter(
          obj => {
             return (
-               obj.name.toLowerCase().includes(searchField.toLowerCase())
+               obj.firstName.toLowerCase().includes(searchField.toLowerCase())
             )
          }
       )
 
-      return (nbaPlayers.length === 0)
+      return (nbaPlayers.length === 1)
       ? (<h1 className ='tc'> LOADING </h1>)
       :
       (

@@ -13,9 +13,10 @@ const CardList = ({nbaPlayers}) => {
             return (
                <Card
                   key = {ind}
-                  rank={val.rank}
-                  name={val.name}
-                  team={val.team}
+                  firstName={val.firstName}
+                  lastName={val.lastName}
+                  // team={val.team}
+                  // rank={val.rank}
                />);
          })
       }
