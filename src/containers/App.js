@@ -88,12 +88,14 @@ class App extends Component {
       const searchResult = nbaPlayers.filter(
          obj => {
             return (
-               obj.firstName.toLowerCase().includes(searchField.toLowerCase())
+               (obj.firstName.toLowerCase().includes(searchField.toLowerCase()) )
+               ||
+               (obj.lastName.toLowerCase().includes(searchField.toLowerCase()) ) 
             )
          }
       )
 
-      return (nbaPlayers.length === 1)
+      return (nbaPlayers.length === 0)
       ? (<h1 className ='tc'> LOADING </h1>)
       :
       (
