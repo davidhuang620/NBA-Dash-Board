@@ -1,5 +1,4 @@
 # NBA Dash Board 
 
-Keep track on your favoirate NBA players ! 
-
+Keep track on your favoirite NBA players ! 
 
